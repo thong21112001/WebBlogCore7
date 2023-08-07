@@ -3,10 +3,10 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace WebBlog.Migrations
+namespace WebBlog.Data.Migrations
 {
     /// <inheritdoc />
-    public partial class CreateDbWebBlog : Migration
+    public partial class CreateDbContext : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
