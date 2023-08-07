@@ -1,7 +1,15 @@
+﻿using Microsoft.EntityFrameworkCore;
+using WebBlog.Data;
+
 var builder = WebApplication.CreateBuilder(args);
+var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+//Thêm cái này để xác thực lớp kết nối đến sql truy xuất đến chuỗi kết nối
+builder.Services.AddDbContext<ApplicationDbContext>(
+    options => options.UseSqlServer(connectionString));
 
 var app = builder.Build();
 
